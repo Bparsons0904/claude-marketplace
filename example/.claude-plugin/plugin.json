@@ -1,0 +1,8 @@
+{
+  "name": "example-plugin",
+  "description": "A minimal example plugin demonstrating the basic structure",
+  "version": "1.0.0",
+  "author": {
+    "name": "Your Name"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "personal-marketplace",
+  "owner": {
+    "name": "Your Name"
+  },
+  "plugins": [
+    {
+      "name": "example-plugin",
+      "source": "./example",
+      "description": "A minimal example plugin demonstrating the basic plugin structure with agent, command, skill, and MCP configuration examples"
+    }
+  ]
+}
