@@ -1,0 +1,48 @@
+{
+  "name": "development-agents",
+  "version": "1.1.0",
+  "description": "Backend and frontend development agents with opinionated patterns from waugzee codebase",
+  "author": {
+    "name": "Bob Parsons"
+  },
+  "agents": [
+    {
+      "name": "backend-agent",
+      "description": "Go backend development with Fiber, GORM, logger patterns, and dependency injection"
+    },
+    {
+      "name": "frontend-agent",
+      "description": "SolidJS frontend development with TanStack Query, TypeScript, and API integration patterns"
+    }
+  ],
+  "skills": [
+    {
+      "name": "go_logging",
+      "description": "Context-aware logging patterns using custom logger interface, no fmt.Printf"
+    },
+    {
+      "name": "gorm_patterns",
+      "description": "GORM usage with generics, cache builder, and repository patterns"
+    },
+    {
+      "name": "routing_patterns",
+      "description": "Fiber route setup with middleware chaining and handler registration"
+    },
+    {
+      "name": "dependency_injection",
+      "description": "Dependency injection pattern with App struct and ordered initialization"
+    },
+    {
+      "name": "solidjs_patterns",
+      "description": "SolidJS component patterns with signals, stores, and reactive state"
+    },
+    {
+      "name": "api_integration",
+      "description": "TanStack Query integration with custom hooks and error handling"
+    },
+    {
+      "name": "code_commenting",
+      "description": "Self-documenting code principles - comment the 'why' not the 'what', only for complex or unclear logic"
+    }
+  ]
+}
