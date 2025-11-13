@@ -290,10 +290,10 @@ type UserController interface {
 ```
 
 **Benefits:**
-- Easy to mock for testing
-- Loose coupling
-- Clear contracts
+- Loose coupling between components
+- Clear contracts via interfaces
 - Implementation can change without affecting consumers
+- Explicit dependencies make code easier to understand
 
 ## Main Entry Point
 
@@ -324,34 +324,6 @@ func main() {
     if err := fiberApp.Listen(port); err != nil {
         log.Fatal("Failed to start server", "error", err)
     }
-}
-```
-
-## Testing with Dependency Injection
-
-```go
-func TestUserController_Create(t *testing.T) {
-    // Mock repository
-    mockRepo := &MockUserRepository{}
-    mockRepo.On("Create", mock.Anything, mock.Anything, mock.Anything).Return(nil)
-
-    // Mock service
-    mockDiscogs := &MockDiscogsService{}
-
-    // Create controller with mocks
-    controller := NewUserController(mockRepo, mockDiscogs, nil)
-
-    // Test
-    user, err := controller.Create(context.Background(), CreateUserRequest{
-        FirstName: "Test",
-        LastName:  "User",
-        Email:     "test@example.com",
-    })
-
-    // Assert
-    assert.NoError(t, err)
-    assert.NotNil(t, user)
-    mockRepo.AssertExpectations(t)
 }
 ```
 
@@ -424,7 +396,7 @@ func NewDiscogsService(config config.Config) DiscogsService {
 6. Graceful cleanup in reverse order
 7. Composition over inheritance
 8. Explicit dependencies, no hidden globals
-9. Easy to test with mocks
+9. Controllers orchestrate repositories, services, and event bus
 10. Clear separation of concerns
 
-This ensures maintainable, testable, and loosely coupled code.
+This ensures maintainable, loosely coupled, and understandable code.
